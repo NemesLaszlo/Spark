@@ -1,0 +1,22 @@
+<div *ngIf="login" routerLink="login" (click)="onClick()" class="left-corner">
+    <div class="corner-text">
+        <a>Log in</a>
+    </div>
+</div>
+
+<div *ngIf="registration" (click)="onClick()" class="left-corner">
+    <div class="corner-text">
+        <a>Registration</a>
+    </div>
+</div>
+
+<div *ngIf="message" (click)="onClick()" class="left-corner">
+    <div class="corner-text">
+        <a>Messages</a>
+    </div>
+</div>
+<div *ngIf="match" (click)="onClick()" class="left-corner">
+    <div class="corner-text">
+        <a>Match</a>
+    </div>
+</div>

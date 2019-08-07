@@ -1,0 +1,46 @@
+sudo: required
+
+jobs:
+ include:
+    - stage: backend
+      name: "backend tests"
+      language: java
+      jdk: oraclejdk8    
+      before_script:
+        - cd backend
+      script:
+        - ./mvnw clean test -B
+        
+    - stage: backend
+      name: "backend test and build"
+      language: java
+      jdk: oraclejdk8
+      env:
+        global:
+          - CC_TEST_REPORTER_ID=97887b04250b6f41da87ce276c49e3545783613103b718340452f95964c29f92
+      before_script:
+        - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        - chmod +x ./cc-test-reporter
+        - ./cc-test-reporter before-build
+        - cd backend
+      script:
+        - ./mvnw clean install -B
+      after_script:
+        - cd ..
+        - ./cc-test-reporter format-coverage -d -t jacoco ./backend/target/jacoco-ut/jacoco.xml
+        - ./cc-test-reporter upload-coverage -d -r 97887b04250b6f41da87ce276c49e3545783613103b718340452f95964c29f92
+
+    - stage: frontend
+      name: "frontend build"
+      language: node_js
+      node_js:
+        - 10.15.3
+      before_script:
+        - cd frondend/spark
+        - npm install -g @angular/cli
+        - npm install --save-dev @angular-devkit/build-angular
+      script:
+        - ng build
+
+ notifications:
+  email: false

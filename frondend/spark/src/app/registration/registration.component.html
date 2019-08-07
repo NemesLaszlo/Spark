@@ -1,0 +1,24 @@
+<div class="login-clean">
+    <form [formGroup]="regForm" (ngSubmit)="onSubmit()">
+        <div class="illustration">
+            <i class="icon ion-ios-navigate">Spark</i>
+        </div>
+        <div class="form-group">
+            <input class="form-control" formControlName="name" type="text" name="name" placeholder="Név">
+        </div>
+        <div class="form-group">
+            <input class="form-control" formControlName="email" type="email" name="email" placeholder="E-mail">
+        </div>
+        <div class="form-group">
+            <input class="form-control" formControlName="password" type="password" name="password" placeholder="Jelszó">
+        </div>
+        <div class="form-group">
+            <input class="form-control" formControlName="rePassword" type="password" name="re-password" placeholder="Jelszó újra">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" >Regisztráció</button>
+        </div>
+    </form>
+</div>
+
+<app-left-bottom-corner></app-left-bottom-corner>

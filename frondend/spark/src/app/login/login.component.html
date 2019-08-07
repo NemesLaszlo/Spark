@@ -1,0 +1,19 @@
+<div class="login-clean">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="illustration">
+            <i class="icon ion-ios-navigate">Spark</i>
+        </div>
+        <div class="form-group">
+            <input class="form-control" formControlName="email" type="email" name="email" placeholder="E-mail">
+        </div>
+        <div class="form-group">
+            <input class="form-control" formControlName="password" type="password" name="password" placeholder="Jelszó">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit">Bejelentkezés</button>
+        </div>
+        <a class="forgot">Elfelejtetted az e-mail címed vagy jelszavad?</a>
+    </form>
+</div>
+
+<app-left-bottom-corner></app-left-bottom-corner>

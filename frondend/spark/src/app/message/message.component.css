@@ -1,0 +1,100 @@
+.container {
+    margin-left: 0;
+    width: 100%;
+}
+
+.mess-row {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.people {
+    height: 100%;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.message {
+    border-left: 1px solid lightgray;
+    border-right: 1px solid lightgray;
+    height: 100vw;
+}
+
+mat-card-subtitle{
+    padding-left: 12px;
+    color: gray;
+}
+
+table{
+    width: 100%;
+}
+
+td{
+    vertical-align: top;
+}
+
+.input{
+    border-top: 1px solid lightgray;
+    height: 10vh;
+}
+
+textarea{
+    width: 92%;
+    height: 100%;
+    resize: none;
+    margin: auto;
+}
+
+svg{
+    height: 100%;
+    width: 4%;
+    margin-left: 2%;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+.pics{
+    text-align: center;
+}
+
+img{
+    width: 50%;
+}
+
+mat-card{
+    cursor: default;
+    white-space: pre;
+}
+
+.right-message-container {
+    width: 55vw;
+    text-align: right;
+    margin: 5px;
+    padding: 10px;
+    background-color: lightblue;
+    border-radius: 15px;
+    float: right;
+}
+
+.left-message-container {
+    width: 55vw;
+    text-align: left;
+    margin: 5px;
+    padding: 10px;
+    background-color: lightgrey;
+    border-radius: 15px;
+    float: left;
+}
+
+.text{
+    max-height: 100%;
+    width: 100vh;
+    vertical-align: bottom;
+    display: table-row;
+}
+
+.people-message{
+    height: 90vh;
+    overflow-y: auto;
+}

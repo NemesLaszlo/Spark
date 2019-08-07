@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row mess-row">
+    <div class="col-sm-3 people">
+        <mat-card *ngFor="let match of matches" (click)="loadMessage(match)">
+          <table>
+            <tr>
+              <td><mat-card-title>{{ getFullName(match) }}</mat-card-title></td>
+              <td align="right">{{ getLastMessageDate(match) | date:'HH:mm' }}</td>
+            </tr>
+            <tr>
+              <td><mat-card-subtitle> {{ getLastMessage(match) }}</mat-card-subtitle></td>
+              <td align="right" >{{ (activePlayer(match)) ? '&#9679;' : ' ' }}</td>
+            </tr>
+          </table>
+          <hr>
+        </mat-card>
+    </div>
+    <div class="col-sm-7 message">
+      <div class="row text">
+        <div class="people-message">
+          <mat-card *ngFor="let message of actualMessages" class="{{ getSide(message) }}">
+            {{ message.message }}
+          </mat-card>
+        </div>
+      </div>
+      <form [formGroup]="messageForm" (ngSubmit)="messageSend()">
+        <div class="row input">
+          <textarea formControlName="message" class="form-control" aria-label="With textarea" placeholder="Üzenet!"></textarea>
+          <svg (click)="messageSend()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-sm-2 pics">
+      <mat-card>
+          <img mat-card-image src="https://cdn0.iconfinder.com/data/icons/basic-uses-symbol-vol-1/100/Block_Spam_Stop_Lock-512.png" />
+      </mat-card>
+      <mat-card>
+          <img mat-card-image src="https://cdn0.iconfinder.com/data/icons/basic-uses-symbol-vol-1/100/Block_Spam_Stop_Lock-512.png" />
+      </mat-card>
+      <mat-card>
+          <img mat-card-image src="https://cdn0.iconfinder.com/data/icons/basic-uses-symbol-vol-1/100/Block_Spam_Stop_Lock-512.png" />
+      </mat-card>
+      <mat-card>
+          <img mat-card-image src="https://cdn0.iconfinder.com/data/icons/basic-uses-symbol-vol-1/100/Block_Spam_Stop_Lock-512.png" />
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+<app-right-bottom-corner></app-right-bottom-corner>
