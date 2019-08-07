@@ -4,3 +4,12 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/70b4b9ab8b513403b4b1/test_coverage)](https://codeclimate.com/github/NemesLaszlo/Spark/test_coverage)
 # Spark
 Inverse Tinder (Not finished)
+
+# Branch structure
++ Master **stable**
+    + Backend **stable**
+        + Laci
+        + Gabeee
+    + Frontend **stable**
+        + Roli
+        + Rust 
