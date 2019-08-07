@@ -5,17 +5,16 @@ jobs:
     - stage: backend
       name: "backend tests"
       language: java
-      jdk: oraclejdk9     
+      jdk: oraclejdk8    
       before_script:
         - cd backend
-        - chmod +x mvnw     
       script:
         - ./mvnw clean test -B
         
     - stage: backend
       name: "backend test and build"
       language: java
-      jdk: oraclejdk9
+      jdk: oraclejdk8
       env:
         global:
           - CC_TEST_REPORTER_ID=97887b04250b6f41da87ce276c49e3545783613103b718340452f95964c29f92
@@ -24,7 +23,6 @@ jobs:
         - chmod +x ./cc-test-reporter
         - ./cc-test-reporter before-build
         - cd backend
-        - chmod +x mvnw
       script:
         - ./mvnw clean install -B
       after_script:
