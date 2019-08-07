@@ -9,6 +9,7 @@ jobs:
       jdk: oraclejdk8    
       before_script:
         - cd backend
+        - chmod +x mvnw
       script:
         - ./mvnw clean test -B
         
@@ -24,6 +25,7 @@ jobs:
         - chmod +x ./cc-test-reporter
         - ./cc-test-reporter before-build
         - cd backend
+        - chmod +x mvnw
       script:
         - ./mvnw clean install -B
       after_script:
