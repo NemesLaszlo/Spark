@@ -5,7 +5,13 @@ jobs:
     - stage: backend
       name: "backend tests"
       language: java
-      jdk: oraclejdk9    
+      jdk: oraclejdk9
+      addons:
+          apt:
+            packages:
+              - oracle-java9-installer
+      before_install:
+        - chmod +x mvnw      
       before_script:
         - cd backend
       script:
@@ -15,6 +21,12 @@ jobs:
       name: "backend test and build"
       language: java
       jdk: oraclejdk9
+      addons:
+          apt:
+            packages:
+              - oracle-java9-installer
+      before_install:
+        - chmod +x mvnw  
       env:
         global:
           - CC_TEST_REPORTER_ID=97887b04250b6f41da87ce276c49e3545783613103b718340452f95964c29f92
