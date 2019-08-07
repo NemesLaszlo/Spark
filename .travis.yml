@@ -19,7 +19,7 @@ jobs:
       jdk: oraclejdk8
       env:
         global:
-          - CC_TEST_REPORTER_ID=97887b04250b6f41da87ce276c49e3545783613103b718340452f95964c29f92
+          - CC_TEST_REPORTER_ID=7df9353e2bc03f7e8a491e8d59cfaca8018610963a7d416a25be87a9e21cc6a4
       before_script:
         - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
         - chmod +x ./cc-test-reporter
@@ -31,7 +31,7 @@ jobs:
       after_script:
         - cd ..
         - ./cc-test-reporter format-coverage -d -t jacoco ./backend/target/jacoco-ut/jacoco.xml
-        - ./cc-test-reporter upload-coverage -d -r 97887b04250b6f41da87ce276c49e3545783613103b718340452f95964c29f92
+        - ./cc-test-reporter upload-coverage -d -r 7df9353e2bc03f7e8a491e8d59cfaca8018610963a7d416a25be87a9e21cc6a4
 
     - stage: frontend
       name: "frontend build"
