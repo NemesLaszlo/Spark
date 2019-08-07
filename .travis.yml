@@ -5,7 +5,7 @@ jobs:
     - stage: backend
       name: "backend tests"
       language: java
-      jdk: oraclejdk8    
+      jdk: oraclejdk9    
       before_script:
         - cd backend
       script:
@@ -14,7 +14,7 @@ jobs:
     - stage: backend
       name: "backend test and build"
       language: java
-      jdk: oraclejdk8
+      jdk: oraclejdk9
       env:
         global:
           - CC_TEST_REPORTER_ID=97887b04250b6f41da87ce276c49e3545783613103b718340452f95964c29f92
